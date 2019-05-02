@@ -1,3 +1,5 @@
+import { getState } from "../store"
+
 /* FIXME:
 *
 * export a function that gets a single element from the store.
@@ -7,6 +9,14 @@
 *
 */
 
-const get = () => {};
+const get = (i) => {
+    let list = getState();
+    try {
+        return list[i];
+    }
+    catch (e) {
+        return null;
+    }
+};
 
 export default get;

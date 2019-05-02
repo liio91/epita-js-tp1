@@ -1,3 +1,5 @@
+import { getState, setState } from "../store"
+
 /* FIXME:
 *
 * export a function that removes a single element from the store.
@@ -7,6 +9,13 @@
 *
 */
 
-const remove = () => {};
+const remove = (i) => {
+    let list = getState();
+    try {
+        list.splice(i, 1);
+    } finally {
+        setState(list);
+    }
+};
 
 export default remove;

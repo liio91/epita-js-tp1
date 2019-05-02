@@ -1,3 +1,5 @@
+import { getState, setState } from "../store"
+
 /* FIXME:
 *
 * export a function that adds a new element to the store.
@@ -9,6 +11,10 @@
 *
 */
 
-const add = () => {};
+const add = (elm) => {
+    let list = getState();
+    const newState = [...list, elm]
+    setState(newState)
+};
 
 export default add;
